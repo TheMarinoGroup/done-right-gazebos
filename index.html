@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Done Right Gazebos | Cedar Hardtop Gazebo Installation — Brownland, MA</title>
+<meta name="description" content="Professional cedar hardtop gazebo installation in Brownland, Massachusetts and nearby towns. 15 ft × 13 ft solid cedar frame, black steel hardtop roof. Installation included. Call for a quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cedar: #8B4513;
+  --cedar-light: #A0522D;
+  --cedar-dark: #5C2D0A;
+  --charcoal: #1a1a1a;
+  --steel: #2c2c2c;
+  --warm-white: #FAF8F5;
+  --cream: #F5F0E8;
+  --gold: #C9A84C;
+  --gold-light: #D4B96A;
+  --text: #2D2A26;
+  --text-light: #6B6560;
+  --shadow-lg: 0 25px 60px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.08);
+  --shadow-xl: 0 35px 80px rgba(0,0,0,0.2), 0 15px 30px rgba(0,0,0,0.1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  background: var(--warm-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── NAVIGATION ─── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(26,26,26,0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  transition: all 0.4s ease;
+}
+.nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2rem;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; font-weight: 700;
+  color: #fff; text-decoration: none;
+  letter-spacing: 0.5px;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,0.8); text-decoration: none;
+  font-size: 0.9rem; font-weight: 400;
+  transition: color 0.3s; letter-spacing: 0.3px;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--charcoal) !important; font-weight: 600 !important;
+  padding: 0.6rem 1.5rem; border-radius: 6px;
+  transition: transform 0.3s, box-shadow 0.3s !important;
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 15px rgba(201,168,76,0.4); }
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.hamburger span {
+  display: block; width: 24px; height: 2px;
+  background: #fff; margin: 5px 0; transition: all 0.3s;
+}
+
+/* ─── HERO ─── */
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('images/drg-hero.jpg') center/cover no-repeat;
+}
+.hero-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(26,26,26,0.75) 0%, rgba(26,26,26,0.4) 50%, rgba(26,26,26,0.2) 100%);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 1200px; margin: 0 auto;
+  padding: 8rem 2rem 4rem;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold-light); font-size: 0.8rem; font-weight: 500;
+  padding: 0.5rem 1.2rem; border-radius: 50px;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800; color: #fff;
+  line-height: 1.1; margin-bottom: 1.5rem;
+  max-width: 700px;
+}
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: 1.15rem; color: rgba(255,255,255,0.8);
+  max-width: 520px; margin-bottom: 2.5rem;
+  line-height: 1.7; font-weight: 300;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--charcoal); font-weight: 600; font-size: 1rem;
+  padding: 1rem 2.2rem; border-radius: 8px;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: all 0.3s; box-shadow: 0 4px 20px rgba(201,168,76,0.3);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.5); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3);
+  color: #fff; font-weight: 500; font-size: 1rem;
+  padding: 1rem 2.2rem; border-radius: 8px;
+  text-decoration: none; transition: all 0.3s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.5); }
+
+/* ─── SECTION COMMON ─── */
+.section { padding: 6rem 2rem; }
+.section-dark { background: var(--charcoal); color: #fff; }
+.section-cream { background: var(--cream); }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1rem;
+}
+.section-dark .section-label { color: var(--gold-light); }
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700; line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.section-subtitle {
+  font-size: 1.05rem; color: var(--text-light);
+  max-width: 600px; line-height: 1.7; font-weight: 300;
+}
+.section-dark .section-subtitle { color: rgba(255,255,255,0.6); }
+
+/* ─── INCLUDED (What's Included) ─── */
+.included-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem; margin-top: 3rem;
+}
+.included-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(0,0,0,0.04);
+  position: relative; overflow: hidden;
+}
+.included-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cedar), var(--gold));
+}
+.included-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+.included-icon {
+  width: 56px; height: 56px; border-radius: 14px;
+  background: linear-gradient(135deg, var(--cedar), var(--cedar-light));
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.5rem; font-size: 1.5rem; color: #fff;
+}
+.included-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem; font-weight: 700;
+  margin-bottom: 0.75rem; color: var(--charcoal);
+}
+.included-card p { color: var(--text-light); font-size: 0.95rem; line-height: 1.7; }
+
+/* ─── SPECS ─── */
+.specs-layout {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center; margin-top: 3rem;
+}
+.specs-image {
+  border-radius: 20px; overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+}
+.specs-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.specs-image::after {
+  content: ''; position: absolute; inset: 0;
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+  pointer-events: none;
+}
+.specs-list { list-style: none; }
+.specs-list li {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.specs-list li:last-child { border-bottom: none; }
+.spec-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(201,168,76,0.15);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 1.1rem;
+}
+.spec-text strong {
+  display: block; font-size: 0.95rem;
+  color: #fff; margin-bottom: 0.2rem;
+}
+.spec-text span { font-size: 0.85rem; color: rgba(255,255,255,0.55); }
+
+/* ─── GALLERY ─── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem; margin-top: 3rem;
+}
+.gallery-item {
+  border-radius: 16px; overflow: hidden;
+  position: relative; cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.4s, box-shadow 0.4s;
+  aspect-ratio: 4/3;
+}
+.gallery-item:hover { transform: translateY(-6px) scale(1.02); box-shadow: var(--shadow-xl); }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s; }
+.gallery-item:hover img { transform: scale(1.08); }
+.gallery-item .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(26,26,26,0.6) 0%, transparent 50%);
+  opacity: 0; transition: opacity 0.3s;
+  display: flex; align-items: flex-end; padding: 1.25rem;
+}
+.gallery-item:hover .overlay { opacity: 1; }
+.overlay span { color: #fff; font-size: 0.85rem; font-weight: 500; }
+
+/* Lightbox */
+.lightbox {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.92); backdrop-filter: blur(10px);
+  align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.lightbox.active { display: flex; }
+.lightbox img {
+  max-width: 90vw; max-height: 85vh;
+  border-radius: 12px; box-shadow: 0 0 60px rgba(0,0,0,0.5);
+}
+.lightbox-close {
+  position: absolute; top: 1.5rem; right: 2rem;
+  background: none; border: none; color: #fff;
+  font-size: 2rem; cursor: pointer; opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.lightbox-close:hover { opacity: 1; }
+
+/* ─── SERVICE AREA ─── */
+.area-card {
+  background: #fff; border-radius: 20px;
+  padding: 3rem; box-shadow: var(--shadow-lg);
+  max-width: 700px; margin: 3rem auto 0;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.area-pin {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--cedar), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.5rem; font-size: 1.8rem; color: #fff;
+}
+.area-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem; font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.area-card p { color: var(--text-light); font-size: 1rem; line-height: 1.7; }
+
+/* ─── CTA / QUOTE ─── */
+.cta-section {
+  background: linear-gradient(135deg, var(--cedar-dark) 0%, var(--charcoal) 100%);
+  position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: ''; position: absolute; inset: 0;
+  background: url('images/drg-evening.jpg') center/cover no-repeat;
+  opacity: 0.15;
+}
+.cta-content {
+  position: relative; z-index: 2;
+  text-align: center; max-width: 650px; margin: 0 auto;
+}
+.cta-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700; color: #fff;
+  margin-bottom: 1rem;
+}
+.cta-content p {
+  color: rgba(255,255,255,0.7);
+  font-size: 1.05rem; margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--charcoal); font-weight: 700; font-size: 1.15rem;
+  padding: 1.2rem 3rem; border-radius: 10px;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 8px 30px rgba(201,168,76,0.3);
+}
+.cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(201,168,76,0.5); }
+
+/* ─── FOOTER ─── */
+.footer {
+  background: #111; color: rgba(255,255,255,0.5);
+  text-align: center; padding: 2.5rem 2rem;
+  font-size: 0.85rem;
+}
+.footer a { color: var(--gold); text-decoration: none; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(26,26,26,0.98); padding: 1.5rem 2rem;
+    gap: 1rem;
+  }
+  .hamburger { display: block; }
+  .specs-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero h1 { font-size: clamp(2.2rem, 8vw, 3.5rem); }
+}
+@media (max-width: 500px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .included-grid { grid-template-columns: 1fr; }
+}
+
+/* ─── ANIMATIONS ─── */
+.fade-up {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Done Right <span>Gazebos</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#included">What's Included</a></li>
+      <li><a href="#specs">Specifications</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#area">Service Area</a></li>
+      <li><a href="#quote" class="nav-cta">Call for a Quote</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">&#9670; Brownland, Massachusetts</div>
+    <h1>Solid Cedar Gazebo,<br><em>Done Right.</em></h1>
+    <p class="hero-sub">A premium 15 ft × 13 ft hardtop cedar gazebo, professionally installed in your backyard. Built to last, backed by our warranty.</p>
+    <div class="hero-actions">
+      <a href="#quote" class="btn-primary">&#9742; Call for a Quote</a>
+      <a href="#specs" class="btn-secondary">View Specifications &#8595;</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="section section-cream" id="included">
+  <div class="container">
+    <span class="section-label">What's Included</span>
+    <h2 class="section-title">Everything You Need, One Price</h2>
+    <p class="section-subtitle">Your gazebo arrives with professional installation and warranty coverage included.</p>
+    <div class="included-grid">
+      <div class="included-card fade-up">
+        <div class="included-icon">&#9965;</div>
+        <h3>Professional Installation</h3>
+        <p>Your cedar hardtop gazebo is installed on-site by our team. Installation is included with every gazebo — no extra charge, no subcontractors.</p>
+      </div>
+      <div class="included-card fade-up">
+        <div class="included-icon">&#9989;</div>
+        <h3>90-Day In-House Warranty</h3>
+        <p>Every installation is backed by our 90-day in-house warranty. If something is not right, we come back and make it right.</p>
+      </div>
+      <div class="included-card fade-up">
+        <div class="included-icon">&#9878;</div>
+        <h3>Premium Materials</h3>
+        <p>Solid cedar wood frame paired with a black galvanized steel hardtop roof. Engineered for beauty and durability in New England weather.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIFICATIONS -->
+<section class="section section-dark" id="specs">
+  <div class="container">
+    <span class="section-label">Specifications</span>
+    <h2 class="section-title" style="color:#fff;">Built with Precision</h2>
+    <p class="section-subtitle">Every detail of the cedar hardtop gazebo, at a glance.</p>
+    <div class="specs-layout">
+      <div class="specs-image fade-up">
+        <img src="images/drg-side.jpg" alt="Side elevation of the 15 by 13 foot cedar hardtop gazebo in daylight" loading="lazy">
+      </div>
+      <ul class="specs-list fade-up">
+        <li>
+          <div class="spec-icon">&#8596;</div>
+          <div class="spec-text">
+            <strong>15 ft × 13 ft Footprint</strong>
+            <span>Generous coverage for outdoor dining, seating, or relaxation</span>
+          </div>
+        </li>
+        <li>
+          <div class="spec-icon">&#8597;</div>
+          <div class="spec-text">
+            <strong>9 ft Peak Height</strong>
+            <span>Tall, airy, and open at the highest point of the roof</span>
+          </div>
+        </li>
+        <li>
+          <div class="spec-icon">&#127795;</div>
+          <div class="spec-text">
+            <strong>Solid Cedar Wood Frame</strong>
+            <span>Natural cedar — aromatic, rot-resistant, and beautiful</span>
+          </div>
+        </li>
+        <li>
+          <div class="spec-icon">&#9632;</div>
+          <div class="spec-text">
+            <strong>Black Galvanized Steel Hardtop Roof</strong>
+            <span>Weather-resistant steel panel roof in matte black finish</span>
+          </div>
+        </li>
+        <li>
+          <div class="spec-icon">&#128161;</div>
+          <div class="spec-text">
+            <strong>Ceiling Hook</strong>
+            <span>Factory-fitted hook in the roof peak for a lantern or hanging plant</span>
+          </div>
+        </li>
+        <li>
+          <div class="spec-icon">&#9737;</div>
+          <div class="spec-text">
+            <strong>Open Sides</strong>
+            <span>No walls, no netting, no curtains — open-air by design</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="container">
+    <span class="section-label">Gallery</span>
+    <h2 class="section-title">See the Gazebo</h2>
+    <p class="section-subtitle">The cedar hardtop gazebo from every angle.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-up" onclick="openLightbox(this)">
+        <img src="images/drg-hero.jpg" alt="Three-quarter view of the cedar hardtop gazebo on a paver patio" loading="lazy">
+        <div class="overlay"><span>Three-Quarter View</span></div>
+      </div>
+      <div class="gallery-item fade-up" onclick="openLightbox(this)">
+        <img src="images/drg-side.jpg" alt="Full side elevation of the cedar hardtop gazebo in daylight" loading="lazy">
+        <div class="overlay"><span>Side Elevation</span></div>
+      </div>
+      <div class="gallery-item fade-up" onclick="openLightbox(this)">
+        <img src="images/drg-evening.jpg" alt="Cedar hardtop gazebo at dusk with a lantern hanging from the ceiling hook" loading="lazy">
+        <div class="overlay"><span>Evening Ambiance</span></div>
+      </div>
+      <div class="gallery-item fade-up" onclick="openLightbox(this)">
+        <img src="images/drg-detail.jpg" alt="Close-up detail of the cedar frame and steel roof edge" loading="lazy">
+        <div class="overlay"><span>Cedar &amp; Steel Detail</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- SERVICE AREA -->
+<section class="section section-cream" id="area">
+  <div class="container">
+    <span class="section-label">Service Area</span>
+    <h2 class="section-title" style="text-align:center;">Where We Install</h2>
+    <div class="area-card fade-up">
+      <div class="area-pin">&#128205;</div>
+      <h3>Brownland, Massachusetts</h3>
+      <p>We serve Brownland and nearby towns. If you are in the area and interested in a cedar hardtop gazebo, reach out — we will let you know if your location is within our service range.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / QUOTE -->
+<section class="section cta-section" id="quote">
+  <div class="cta-content">
+    <span class="section-label" style="color:var(--gold-light);">Get Started</span>
+    <h2>Ready for Your Cedar Gazebo?</h2>
+    <p>Installation included. 90-day in-house warranty. Reach out today for a free quote on your new 15 ft × 13 ft cedar hardtop gazebo.</p>
+    <a href="mailto:thejmmarinogroup@gmail.com?subject=Gazebo%20Quote%20Request&body=Hi%2C%20I%27m%20interested%20in%20a%20cedar%20hardtop%20gazebo.%20Please%20send%20me%20a%20quote." class="cta-btn">&#9993; Call for a Quote</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>&copy; 2026 Done Right Gazebos. Brownland, Massachusetts.<br>
+  <a href="mailto:thejmmarinogroup@gmail.com">thejmmarinogroup@gmail.com</a></p>
+</footer>
+
+<script>
+// Navbar scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Hamburger
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+// Fade-up on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+}, { threshold: 0.15 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Lightbox
+function openLightbox(el) {
+  const src = el.querySelector('img').src;
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('active');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+</body>
+</html>
