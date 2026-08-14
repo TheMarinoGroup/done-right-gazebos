@@ -87,7 +87,9 @@ body {
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background: url('images/drg-hero.jpg') center/cover no-repeat;
+}
+.hero-bg img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
 }
 .hero-bg::after {
   content: ''; position: absolute; inset: 0;
@@ -310,8 +312,7 @@ body {
 }
 .cta-section::before {
   content: ''; position: absolute; inset: 0;
-  background: url('images/drg-evening.jpg') center/cover no-repeat;
-  opacity: 0.15;
+  background: rgba(139,69,19,0.08);
 }
 .cta-content {
   position: relative; z-index: 2;
@@ -379,7 +380,7 @@ body {
 <!-- NAVIGATION -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">Done Right <span>Gazebos</span></a>
+    <a href="#hero" class="nav-logo">Done Right <span>Gazebos</span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#included">What's Included</a></li>
       <li><a href="#specs">Specifications</a></li>
@@ -395,7 +396,7 @@ body {
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg"><img src="images/drg-hero.jpg" alt="Cedar hardtop gazebo on a paver patio"></div>
   <div class="hero-content">
     <div class="hero-badge">&#9670; Brownland, Massachusetts</div>
     <h1>Solid Cedar Gazebo,<br><em>Done Right.</em></h1>
@@ -441,7 +442,7 @@ body {
     <p class="section-subtitle">Every detail of the cedar hardtop gazebo, at a glance.</p>
     <div class="specs-layout">
       <div class="specs-image fade-up">
-        <img src="images/drg-side.jpg" alt="Side elevation of the 15 by 13 foot cedar hardtop gazebo in daylight" loading="lazy">
+        <img src="images/drg-side.jpg" alt="Side elevation of the 15 by 13 foot cedar hardtop gazebo in daylight">
       </div>
       <ul class="specs-list fade-up">
         <li>
@@ -499,19 +500,19 @@ body {
     <p class="section-subtitle">The cedar hardtop gazebo from every angle.</p>
     <div class="gallery-grid">
       <div class="gallery-item fade-up" onclick="openLightbox(this)">
-        <img src="images/drg-hero.jpg" alt="Three-quarter view of the cedar hardtop gazebo on a paver patio" loading="lazy">
+        <img src="images/drg-hero.jpg" alt="Three-quarter view of the cedar hardtop gazebo on a paver patio">
         <div class="overlay"><span>Three-Quarter View</span></div>
       </div>
       <div class="gallery-item fade-up" onclick="openLightbox(this)">
-        <img src="images/drg-side.jpg" alt="Full side elevation of the cedar hardtop gazebo in daylight" loading="lazy">
+        <img src="images/drg-side.jpg" alt="Full side elevation of the cedar hardtop gazebo in daylight">
         <div class="overlay"><span>Side Elevation</span></div>
       </div>
       <div class="gallery-item fade-up" onclick="openLightbox(this)">
-        <img src="images/drg-evening.jpg" alt="Cedar hardtop gazebo at dusk with a lantern hanging from the ceiling hook" loading="lazy">
+        <img src="images/drg-evening.jpg" alt="Cedar hardtop gazebo at dusk with a lantern hanging from the ceiling hook">
         <div class="overlay"><span>Evening Ambiance</span></div>
       </div>
       <div class="gallery-item fade-up" onclick="openLightbox(this)">
-        <img src="images/drg-detail.jpg" alt="Close-up detail of the cedar frame and steel roof edge" loading="lazy">
+        <img src="images/drg-detail.jpg" alt="Close-up detail of the cedar frame and steel roof edge">
         <div class="overlay"><span>Cedar &amp; Steel Detail</span></div>
       </div>
     </div>
@@ -543,6 +544,7 @@ body {
     <h2>Ready for Your Cedar Gazebo?</h2>
     <p>Installation included. 90-day in-house warranty. Reach out today for a free quote on your new 15 ft × 13 ft cedar hardtop gazebo.</p>
     <a href="mailto:thejmmarinogroup@gmail.com?subject=Gazebo%20Quote%20Request&body=Hi%2C%20I%27m%20interested%20in%20a%20cedar%20hardtop%20gazebo.%20Please%20send%20me%20a%20quote." class="cta-btn">&#9993; Call for a Quote</a>
+    <p style="margin-top:1.5rem; color: rgba(255,255,255,0.5); font-size:0.9rem;">Or email us directly at <a href="mailto:thejmmarinogroup@gmail.com" style="color: var(--gold-light);">thejmmarinogroup@gmail.com</a></p>
   </div>
 </section>
 
